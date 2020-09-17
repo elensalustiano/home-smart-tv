@@ -1,0 +1,21 @@
+.sidebar {
+  list-style: none;
+  position: absolute;
+  background-color: black;
+  height: 100%;
+  width: 14%;
+  z-index: 99;
+  top: 0;
+  border-right: 1px solid gray;
+
+  &__item {
+    color: white;
+    font-size: 24px;
+    padding: 16px 0;
+
+    &--focused {
+      background-color: white;
+      color: black;
+    }
+  }
+}
