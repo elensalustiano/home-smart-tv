@@ -4,7 +4,7 @@ import { KEY_CODE } from '../../constant/keydown'
 
 import './index.scss'
 
-export default class Track extends React.PureComponent {
+export default class Sidebar extends React.PureComponent {
   constructor(props) {
     super(props)
 

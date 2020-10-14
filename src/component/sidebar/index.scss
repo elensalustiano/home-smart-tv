@@ -1,21 +1,23 @@
+@import "../../styles/colors";
+
 .sidebar {
   list-style: none;
-  position: absolute;
-  background-color: black;
+  position: fixed;
+  background-color: $dark-blue;
   height: 100%;
   width: 14%;
   z-index: 99;
   top: 0;
-  border-right: 1px solid gray;
+  border-right: 2px solid $gray;
 
   &__item {
-    color: white;
+    color: $white;
     font-size: 24px;
-    padding: 16px 0;
+    padding: 16px;
 
     &--focused {
-      background-color: white;
-      color: black;
+      background-color:$white;
+      color: $black;
     }
   }
 }
