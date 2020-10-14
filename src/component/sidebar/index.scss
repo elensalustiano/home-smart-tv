@@ -1,14 +1,16 @@
 @import "../../styles/colors";
 
 .sidebar {
+  margin: auto;
   list-style: none;
   position: fixed;
   background-color: $dark-blue;
   height: 100%;
-  width: 14%;
+  width: 20%;
   z-index: 99;
   top: 0;
   border-right: 2px solid $gray;
+  padding: 0;
 
   &__item {
     color: $white;
