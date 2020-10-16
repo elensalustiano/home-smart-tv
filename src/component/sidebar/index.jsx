@@ -21,7 +21,7 @@ export default class Sidebar extends React.PureComponent {
     document.removeEventListener('keydown', this.onKeyDown, true)
   }
 
-  onKeyDown = (event) => {
+  onKeyDown = event => {
     const {
       isActive,
       menuItems
@@ -52,7 +52,7 @@ export default class Sidebar extends React.PureComponent {
 
   setActiveMenuIndex = index => this.setState({ activeMenuIndex: index })
 
-  getMenuClass = (index) => {
+  getMenuClass = index => {
     const { isActive } = this.props
     const { activeMenuIndex } = this.state
 
