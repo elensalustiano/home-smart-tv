@@ -1,5 +1,6 @@
 .horizontal-track {
-  text-align: left;
+  overflow: hidden;
+  padding-left: 70px;
 
   &__container {
     transition-duration: 1s;
@@ -15,7 +16,6 @@
 
     &--border {
       position: absolute;
-      margin-left: 35px;
       background: transparent;
       height: 275px;
     }

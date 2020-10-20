@@ -6,7 +6,6 @@ import './index.scss'
 
 const CARD_WIDTH = 200
 const CARD_BORDER_MARGIN_RIGHT = 20
-const INITIALCARD_CONTAINER_MARGIN_LEFT = 40
 
 export default class HorizontalTrack extends React.PureComponent {
   constructor(props) {
@@ -72,19 +71,20 @@ export default class HorizontalTrack extends React.PureComponent {
     const totalWidthToMove = activeIndex * (CARD_WIDTH + CARD_BORDER_MARGIN_RIGHT)
 
     return {
-      marginLeft: INITIALCARD_CONTAINER_MARGIN_LEFT - totalWidthToMove
+      marginLeft: -totalWidthToMove
     }
   }
 
   render() {
     const {
       isActive,
-      items
+      items,
+      title
     } = this.props
 
     return (
       <div className="horizontal-track">
-        <p className="horizontal-track__title">TITULO</p>
+        <p className="horizontal-track__title">{title}</p>
         <div className={`horizontal-track__card horizontal-track__card--border
           ${isActive ? 'horizontal-track__card--focused' : ''}`
         }
