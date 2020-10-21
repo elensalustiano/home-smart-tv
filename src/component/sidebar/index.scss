@@ -9,17 +9,39 @@
   width: 20%;
   z-index: 99;
   top: 0;
-  border-right: 2px solid $gray;
   padding: 0;
+  opacity: 0.8;
 
-  &__item {
+  &__label {
     color: $white;
     font-size: 24px;
     padding: 16px;
+    display: inline;
+    vertical-align: middle;
 
-    &--focused {
-      background-color:$white;
+    &.focused {
       color: $black;
     }
+  }
+
+  &__item {
+    padding: 15px;
+
+    &.focused {
+      background-color: $white;
+    }
+
+    &:first-child {
+      margin-top: 100px;
+    }
+  }
+
+  &__icon {
+    width: 50px;
+    vertical-align: middle;
+  }
+
+  &--closed {
+    width: 6%;
   }
 }
