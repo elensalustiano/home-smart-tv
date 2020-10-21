@@ -52,27 +52,31 @@ export default class Sidebar extends React.PureComponent {
 
   setActiveMenuIndex = index => this.setState({ activeMenuIndex: index })
 
-  getMenuClass = index => {
-    const { isActive } = this.props
-    const { activeMenuIndex } = this.state
+  getItemClass = index => this.state.activeMenuIndex === index ? 'focused' : ''
 
-    return isActive && activeMenuIndex === index
-      ? 'sidebar__item--focused'
-      : ''
-  }
+  getSidebarClass = () => this.props.isActive ? '' : 'sidebar--closed'
 
   render() {
-    const { menuItems } = this.props
+    const { isActive, menuItems } = this.props
 
     return (
-      <ul className="sidebar">
+      <ul className={`sidebar ${this.getSidebarClass()}`}>
         {
-          menuItems.map((item, index) =>
-            <li className={`sidebar__item ${this.getMenuClass(index)}`}
-              key={index}>
-              {item.label}
-            </li>
-          )
+          menuItems.map((item, index) => {
+            const itemClass = this.getItemClass(index)
+
+            return (
+              <div className={`sidebar__item ${itemClass}`}>
+                <img className="sidebar__icon" src={item.icon} alt={item.alt} />
+                {isActive &&
+                  <li className={`sidebar__label ${itemClass}`}
+                    key={index}>
+                    {item.label}
+                  </li>
+                }
+              </div>
+            )
+          })
         }
       </ul>
     )
