@@ -54,15 +54,15 @@ export default class HorizontalTrack extends React.PureComponent {
   }
 
   moveLeft = () => this.setState(prevState => {
-    const { onLeftFirstItem } = this.props
-    const previousIndex = Math.max(0, prevState.activeIndex - 1)
+    const { onLeaveFirstItem } = this.props
 
-    if (previousIndex < 0 && onLeftFirstItem) {
-      onLeftFirstItem()
+    if (!prevState.activeIndex && onLeaveFirstItem) {
+      onLeaveFirstItem()
+      return
     }
 
     return {
-      activeIndex: previousIndex
+      activeIndex: Math.max(0, prevState.activeIndex - 1)
     }
   })
 
