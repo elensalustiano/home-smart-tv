@@ -24,7 +24,8 @@ export default class Sidebar extends React.PureComponent {
   onKeyDown = event => {
     const {
       isActive,
-      menuItems
+      menuItems,
+      onLeaveMenu
     } = this.props
 
     if (!isActive) return
@@ -43,7 +44,8 @@ export default class Sidebar extends React.PureComponent {
         break
 
       case KEY_CODE.RIGHT:
-        this.props.onLeaveMenu()
+        onLeaveMenu()
+        event.stopImmediatePropagation()
         break
       default:
         break
