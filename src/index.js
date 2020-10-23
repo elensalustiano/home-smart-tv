@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import * as serviceWorker from './serviceWorker';
+import Home from './home'
+
+import './index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-  </React.StrictMode>,
+  <Home />,
   document.getElementById('root')
 );
 
