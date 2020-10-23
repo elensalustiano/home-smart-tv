@@ -1,3 +1,5 @@
+@import "../../styles/colors";
+
 .horizontal-track {
   overflow: hidden;
   padding-left: 118px;
@@ -10,18 +12,18 @@
   &__card {
     width: 200px;
     height: 280px;
-    background-color: gray;
+    background-color: $gray;
     display: inline-block;
     margin-right: 20px;
+    box-sizing: border-box;
 
     &--border {
       position: absolute;
       background: transparent;
-      height: 275px;
     }
 
     &--focused {
-      border: 5px solid white;
+      border: 5px solid $white;
     }
   }
 
