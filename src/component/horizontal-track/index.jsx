@@ -6,6 +6,7 @@ import './index.scss'
 
 const CARD_WIDTH = 200
 const CARD_BORDER_MARGIN_RIGHT = 20
+const FULL_HD = 1920
 
 export default class HorizontalTrack extends React.PureComponent {
   constructor(props) {
@@ -66,9 +67,17 @@ export default class HorizontalTrack extends React.PureComponent {
     }
   })
 
+  isFullHD = () =>  window.innerWidth >= FULL_HD
+
+  getValueInFullHD= value => value * 1.5
+
   getCardContainerInlineStyle = () => {
     const { activeIndex } = this.state
-    const totalWidthToMove = activeIndex * (CARD_WIDTH + CARD_BORDER_MARGIN_RIGHT)
+
+    const cardWidth = this.isFullHD() ? this.getValueInFullHD(CARD_WIDTH) : CARD_WIDTH
+    const cardBorderWidth = this.isFullHD() ? this.getValueInFullHD(CARD_BORDER_MARGIN_RIGHT) : CARD_BORDER_MARGIN_RIGHT
+
+    const totalWidthToMove = activeIndex * (cardWidth + cardBorderWidth)
 
     return {
       marginLeft: -totalWidthToMove
