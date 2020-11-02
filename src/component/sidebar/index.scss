@@ -1,4 +1,6 @@
 @import "../../styles/colors";
+@import "../../styles/functions.scss";
+@import "../../styles/mixin.scss";
 
 .sidebar {
   margin: auto;
@@ -19,13 +21,22 @@
     display: inline;
     vertical-align: middle;
 
+    @include FULL_HD {
+      padding: calc-FHD(16px);
+      font-size: calc-FHD(24px);
+    }
+
     &.focused {
       color: $black;
     }
   }
 
   &__item {
-    padding: 15px;
+    padding: 16px;
+
+    @include FULL_HD {
+      padding: calc-FHD(16px);
+    }
 
     &.focused {
       background-color: $white;
@@ -33,12 +44,21 @@
 
     &:first-child {
       margin-top: 100px;
+
+      @include FULL_HD {
+        margin-top: calc-FHD(100px);
+      }
     }
   }
 
   &__icon {
     width: 50px;
     vertical-align: middle;
+
+
+    @include FULL_HD {
+      width: calc-FHD(50px);
+    }
   }
 
   &--closed {
